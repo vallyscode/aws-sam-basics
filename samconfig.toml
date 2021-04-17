@@ -1,0 +1,22 @@
+version = 0.1
+[dev]
+[dev.deploy]
+[dev.deploy.parameters]
+stack_name = "dev-app01"
+s3_bucket = "basicappdeployment"
+s3_prefix = "dev-app01"
+region = "eu-west-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_NAMED_IAM"
+parameter_overrides = "Env=\"dev\""
+
+[test]
+[test.deploy]
+[test.deploy.parameters]
+stack_name = "test-app01"
+s3_bucket = "basicappdeployment"
+s3_prefix = "test-app01"
+region = "eu-west-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_NAMED_IAM"
+parameter_overrides = "Env=\"test\""

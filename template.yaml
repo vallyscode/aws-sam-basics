@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+   App01
+
+   SAM basics
+
+Parameters:
+  Env:
+    Type: String
+    Description: "Logical environment like dev, test, prod etc"
+    Default: dev
+
+Resources:
+  AppBucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      BucketName: !Sub ${Env}-app01
+  
+  
